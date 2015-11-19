@@ -1,0 +1,20 @@
+<dom-module id="element-content"><template><style>header img.logo {
+	width: 200px;
+}
+</style><section class="content"><header><div class="row"><img src="{{url}}" class="logo"/></div></header><div class="buttons row"><template is="dom-repeat" items="{{libs}}"><a href="{{item.url}}" target="_blank" class="btn btn-default btn-sm">{{item.name}}</a></template></div></section></template><script>Polymer({
+	is: 'element-content',
+	properties: {
+		url: {
+			type: String,
+			value: 'images/polymer.png'
+		}
+	},
+	ready: function() {
+		this.libs = [];
+		var scope = this;
+		$.getJSON('data/data.json',function(data){
+			scope.libs = data;
+		});
+
+	},
+});</script></dom-module>

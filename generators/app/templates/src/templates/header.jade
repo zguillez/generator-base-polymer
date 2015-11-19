@@ -1,0 +1,21 @@
+dom-module(id='element-header')
+	template
+		style.
+			header img.logo {
+				width: 200px;
+			}
+
+		header
+			.row
+				img(src='{{url}}' class='logo')
+
+	script.
+		Polymer({
+			is: 'element-header',
+			properties: {
+				url: {
+					type: String,
+					value: 'images/yeoman.png'
+				}
+			}
+		});

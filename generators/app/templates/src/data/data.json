@@ -1,0 +1,22 @@
+[{
+	"name": "RequireJS",
+	"url": "http://requirejs.org/"
+}, {
+	"name": "Page.js",
+	"url": "https://visionmedia.github.io/page.js/"
+}, {
+	"name": "Jquery",
+	"url": "https://jquery.com/"
+}, {
+	"name": "Bootstrap",
+	"url": "http://getbootstrap.com/"
+}, {
+	"name": "Sass",
+	"url": "http://sass-lang.com/"
+}, {
+	"name": "Jade",
+	"url": "http://jade-lang.com/"
+}, {
+	"name": "Grunt",
+	"url": "http://gruntjs.com/"
+}]

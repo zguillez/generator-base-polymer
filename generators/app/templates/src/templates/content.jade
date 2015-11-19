@@ -1,0 +1,35 @@
+dom-module(id='element-content')
+	template
+		style.
+			header img.logo {
+				width: 200px;
+			}
+
+		section(class='content')
+
+			header
+				.row
+					img(src='{{url}}' class='logo')
+
+			.buttons.row
+				template(is='dom-repeat' items='{{libs}}')
+					a(href='{{item.url}}' target='_blank' class='btn btn-default btn-sm') {{item.name}}
+
+	script.
+		Polymer({
+			is: 'element-content',
+			properties: {
+				url: {
+					type: String,
+					value: 'images/polymer.png'
+				}
+			},
+			ready: function() {
+				this.libs = [];
+				var scope = this;
+				$.getJSON('data/data.json',function(data){
+					scope.libs = data;
+				});
+
+			},
+		});
