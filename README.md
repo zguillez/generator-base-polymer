@@ -22,7 +22,7 @@ To install generator-base-backbone from npm, run:
 
 Finally, initiate the generator:
 
-	yo base-reactjs
+	yo base-polymer
 
 If you have error on install try to update dependences manually:
 
