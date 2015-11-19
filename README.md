@@ -1,12 +1,12 @@
 # generator-base-reactjs
 
-[![Build Status](https://secure.travis-ci.org/zguillez/generator-base-reactjs.png?branch=master)](https://travis-ci.org/zguillez/generator-base-reactjs) [![Code Climate](https://codeclimate.com/github/zguillez/generator-base-reactjs/badges/gpa.svg)](https://codeclimate.com/github/zguillez/generator-base-reactjs)
+[![Build Status](https://secure.travis-ci.org/zguillez/generator-base-polymer.png?branch=master)](https://travis-ci.org/zguillez/generator-base-polymer) [![Code Climate](https://codeclimate.com/github/zguillez/generator-base-polymer/badges/gpa.svg)](https://codeclimate.com/github/zguillez/generator-base-polymer)
 
 > [Zguillez](https://zguillez.io) | Guillermo de la Iglesia
 
-### Yeoman generator for ReactJS webapp development. With RequireJS, Bootstrap, Sass and templating with Jade. JSX compiled with Babel
+### Yeoman generator for Polymer webapp development. With RequireJS, Bootstrap, Sass and templating with Jade. Routing with Page.js
 
-![](http://zguillez.github.io/img/reactjs.png)
+![](http://zguillez.github.io/img/polymer.png)
 
 # Getting Started
 
@@ -18,7 +18,7 @@
 
 To install generator-base-backbone from npm, run:
 
-	npm install -g generator-base-reactjs
+	npm install -g generator-base-polymer
 
 Finally, initiate the generator:
 
@@ -63,7 +63,7 @@ Develop code on folder **/src**
 		/data
 		/images
 		/scripts
-			/components
+			/modules
 		/styles
 		/templates
 		
@@ -85,7 +85,7 @@ Distribute code is compileded on forder **/dist**
 		/images
 		/js
 		/lib
-		/templates
+		/modules
 		
 ## Styling
 
@@ -95,7 +95,7 @@ Sass files (\*.sass, \*.scss) must be located on **/src/styles** folder root.
 * Grunt task **copy.js** will copy all CSS files into **/src/styles/css** to folder **/dist/css** for ditribution.
 * You can also create and edit CSS files in **/src/styles/css**.
 
-## Templating with Jade and Reactjs-Template
+## Templating with Jade
 
 * The NodeJS template engine JADE is implemented. Jade files (\*.jade) must be located on **/templates** folder root.
 
@@ -103,94 +103,92 @@ Example:
 
 	// src/templates/footer.jade
 	
-	footer
-		.row
-			p @2015
+	dom-module(id='element-footer')
+	template
+		style.
+			footer {
+				font-size: 0.8em;
+			}
+
+		header
+			div(class='row')
+				p @{{year}}
+		
+	script.
+		Polymer({
+			is: 'element-footer',
+			properties: {
+				year: {
+					type: String,
+					value: '2015'
+				}
+			}
+		});
 
 Compiled:
 
-	// src/templates/rt/footer.rt
+	// src/templates/html/footer.html
 	
-	<footer><div class="row"><p>@2015</p></div></footer>
+	<dom-module id="element-footer">
+	    <template>
+	        <style>
+	        footer {
+	            font-size: 0.8em;
+	        }
+	        </style>
+	        <header>
+	            <div class="row">
+	                <p>@{{year}}</p>
+	            </div>
+	        </header>
+	    </template>
+	    <script>
+	    Polymer({
+	        is: 'element-footer',
+	        properties: {
+	            year: {
+	                type: String,
+	                value: '2015'
+	            }
+	        }
 	
-* Grunt task **reactTemplates** will process the files into templates files.
-
-Example:
-
-	// src/templates/rt/footer.rt.js
-	
-	var footerRT = function () {
-		return React.createElement('footer', {}, React.createElement('div', { 'className': 'row' }, React.createElement('p', {}, '@2015')));
-	};
+	    });
+	    </script>
+	</dom-module>
 			
-* Grunt task **copy.js** will copy all CSS files into **/templates/html** to folder **/dist/templates** for ditribution.
+* Grunt task **copy.js** will copy all HTML files into **/templates/html** to folder **/dist/modules** for ditribution.
 
-* Grunt task **replace.js** will modify the script to implement RequireJS function.
+* You can create files directly from folfer **/html** without Jade template.
 
-Example:
-	
-	// dist/templates/footer.rt.js
-	
-	define(['react'], function(React) {
-		return footerRT = function () {
-    		return React.createElement('footer', {}, React.createElement('div', { 'className': 'row' }, React.createElement('p', {}, '@2015')));
-		};
-	});
-
-* You can now insert templates into your components
+* You can also create components without templates on folder **/scripts/modules**. This files will copied also on folder **/dist/modules**
 
 Example:
 
-	// src/scripts/components/footer.js
+	// src/scripts/modules/main.html
 	
-	define(['react', '../../../../templates/footer.rt'], function(React, template) {
-		'use strict';
-		return React.createClass({
-			displayName: 'footer',
-			render: template
-		});
-	});
-
-* You can also create components without templates
-
-Example:
-
-	// src/scripts/components/footer.js
-	
-	define(['react'], function(React) {
-		'use strict';
-		return React.createClass({
-			displayName: 'footer',
-			render: function() {
-				return (
-					<footer>
-						<div className="row">
-							<p>@2015</p>
-						</div>
-					</footer>
-				)
-			}
-		});
-	});
+	<link rel="import" href="modules/header.html">
+	<link rel="import" href="modules/content.html">
+	<link rel="import" href="modules/footer.html">
+	<element-header></element-header>
+	<element-content></element-content>
+	<element-footer></element-footer>
 	
 **Documentation:**
 
 * [http://jade-lang.com/](http://jade-lang.com/)
-* [http://wix.github.io/react-templates/](http://wix.github.io/react-templates/)
 
 # Routing
 
-Routing is made with Page.js micro client-side router. Router is loaded in Main.js file:
+Routing is made with Page.js micro client-side router and JQuery. Router is loaded in Main.js file:
 
 	// src/scripts/main.js
 	
 	'use strict';
 	require.config({
 		paths: {
+			router: '../js/router',
 			text: '../lib/text',
-			react: '../lib/react',
-			jsx: '../lib/jsx',
-			react_dom: '../lib/react-dom',
+			webcomponents: '../lib/webcomponents-lite.min',
 			page: '../lib/page/page',
 			underscore: '../lib/lodash.min',
 			jquery: '../lib/jquery.min',
@@ -199,8 +197,8 @@ Routing is made with Page.js micro client-side router. Router is loaded in Main.
 		}
 	});
 	window.app = {};
-	require(['react', 'jquery', 'underscore'], function(React, $, _) {
-		require(['react_dom', , 'bootstrap'], function(ReactDOM, Bootstrap) {
+	require(['webcomponents', 'jquery', 'underscore'], function(webcomponents, $, _) {
+		require(['bootstrap'], function(Bootstrap) {
 			require(['router']);
 		});
 	});
@@ -209,7 +207,7 @@ Place routing path in file router.js
 
 	// src/scripts/router.js
 	
-	define(['page', 'react', 'react_dom'], function(Page, React, ReactDOM) {
+	define(['page', 'jquery'], function(Page, $) {
 		'use strict';
 		Page.base('');
 		Page('/', index);
@@ -224,12 +222,12 @@ Place routing path in file router.js
 		}
 	
 		function landing() {
-			loadComponent('../js/components/landing');
+			loadComponent('modules/main.html');
 		}
 	
 		function loadComponent(path) {
-			require([path], function(Component) {
-				ReactDOM.render(<Component/>, document.getElementById('app'));
+			$.get(path, function(data) {
+				$('#app').html(data);
 			});
 		}
 	});
@@ -261,20 +259,16 @@ Original code licensed under [MIT](https://en.wikipedia.org/wiki/MIT_License) Op
 
 # Changelog
 
-### v1.1.0 (Novembre 14, 2015) 
-* Routing with Page.JS
-
-### v1.0.0 (Novembre 6, 2015) 
-* Initial ReactJS skeleton
+### v1.0.0 (Novembre 18, 2015) 
+* Initial Polymer skeleton
 
 Features:
 
-* ReactJS
-* React Templates
+* Polymer
 * Jade templating
 * Jquery
 * Sass
-* Babel
+* Page.js
 * Grunt tasks
 
 

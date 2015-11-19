@@ -5,7 +5,6 @@ module.exports = function(grunt) {
 	require('./grunt/eslint')(grunt);
 	require('./grunt/clean')(grunt);
 	require('./grunt/jade')(grunt);
-	require('./grunt/reactTemplates')(grunt);
 	require('./grunt/copy')(grunt);
 	require('./grunt/replace')(grunt);
 	require('./grunt/sass')(grunt);
@@ -17,12 +16,12 @@ module.exports = function(grunt) {
 	require('./grunt/babel')(grunt);
 	grunt.registerTask('default', ['serve']);
 	grunt.registerTask('serve', function() {
-		grunt.task.run(['clean', 'eslint', 'sass', 'jade', 'copy', 'replace', 'reactTemplates', 'babel', 'connect', 'open', 'watch']);
+		grunt.task.run(['clean', 'eslint', 'sass', 'jade', 'copy', 'replace', 'babel', 'connect', 'open', 'watch']);
 	});
 	grunt.registerTask('build', function() {
-		grunt.task.run(['clean', 'eslint', 'sass', 'jade', 'copy', 'replace', 'reactTemplates', 'babel']);
+		grunt.task.run(['clean', 'eslint', 'sass', 'jade', 'copy', 'replace', 'babel']);
 	});
 	grunt.registerTask('rebuild', function() {
-		grunt.task.run(['clean', 'sass', 'jade', 'copy', 'replace', 'reactTemplates', 'babel']);
+		grunt.task.run(['clean', 'sass', 'jade', 'copy', 'replace', 'babel']);
 	});
 };
