@@ -4,6 +4,7 @@
 [![Code Climate](http://img.shields.io/codeclimate/github/zguillez/generator-base-polymer.svg)](https://codeclimate.com/github/zguillez/generator-base-polymer)
 [![Build Status](http://img.shields.io/travis/zguillez/generator-base-polymer.svg)](https://travis-ci.org/zguillez/generator-base-polymer)
 [![Coverage Status](http://img.shields.io/coveralls/zguillez/generator-base-polymer.svg)](https://coveralls.io/r/zguillez/generator-base-polymer)
+[![Dependency Status](https://gemnasium.com/zguillez/generator-base-angularjs.svg)](https://gemnasium.com/zguillez/generator-base-polymer)
 ![](https://reposs.herokuapp.com/?path=zguillez/generator-base-polymer)
 [![License](http://img.shields.io/:license-mit-blue.svg)](http://doge.mit-license.org)
 
