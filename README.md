@@ -1,6 +1,11 @@
 # generator-base-polymer
 
-[![Build Status](https://secure.travis-ci.org/zguillez/generator-base-polymer.png?branch=master)](https://travis-ci.org/zguillez/generator-base-polymer) [![Code Climate](https://codeclimate.com/github/zguillez/generator-base-polymer/badges/gpa.svg)](https://codeclimate.com/github/zguillez/generator-base-polymer)
+[![npm version](https://badge.fury.io/js/generator-base-polymer.svg)](https://badge.fury.io/js/generator-base-polymer)
+[![Code Climate](http://img.shields.io/codeclimate/github/zguillez/generator-base-polymer.svg)](https://codeclimate.com/github/zguillez/generator-base-polymer)
+[![Build Status](http://img.shields.io/travis/zguillez/generator-base-polymer.svg)](https://travis-ci.org/zguillez/generator-base-polymer)
+[![Coverage Status](http://img.shields.io/coveralls/zguillez/generator-base-polymer.svg)](https://coveralls.io/r/zguillez/generator-base-polymer)
+![](https://reposs.herokuapp.com/?path=zguillez/generator-base-polymer)
+[![License](http://img.shields.io/:license-mit-blue.svg)](http://doge.mit-license.org)
 
 > [Zguillez](https://zguillez.io) | Guillermo de la Iglesia
 
