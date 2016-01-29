@@ -1,7 +1,7 @@
 # generator-base-polymer
 
 [![npm version](https://badge.fury.io/js/generator-base-polymer.svg)](https://badge.fury.io/js/generator-base-polymer)
-[![Build Status](http://img.shields.io/travis/zguillez/generator-base-polymer.svg)](https://github.com/zguillez/generator-base-polymer)
+[![Build Status](http://img.shields.io/travis/zguillez/generator-base-polymer.svg)](https://travis-ci.org/zguillez/generator-base-polymer)
 [![Code Climate](http://img.shields.io/codeclimate/github/zguillez/generator-base-polymer.svg)](https://codeclimate.com/github/zguillez/generator-base-polymer)
 [![Dependency Status](https://gemnasium.com/zguillez/generator-base-polymer.svg)](https://gemnasium.com/zguillez/generator-base-polymer)
 [![Installs](https://img.shields.io/npm/dt/generator-base-polymer.svg)](https://coveralls.io/r/zguillez/generator-base-polymer)
@@ -26,6 +26,9 @@
 To install generator-base-backbone from npm, run:
 
 	npm install -g generator-base-polymer
+	
+	//or:
+	sudo npm install -g generator-base-polymer
 
 Finally, initiate the generator:
 
@@ -253,6 +256,52 @@ A *.htcaccess* file is needed for remove the /#/ hash from urls:
 
 * [https://visionmedia.github.io/page.js/](https://visionmedia.github.io/page.js/)
 
+# Dependencies
+
+Grunt task **copy.js** will read all bower.js files from **/bower_components** subfolders, and copy the file path from **main** node, like:
+
+	//bower_components/requirejs/bower.json
+	{
+	  ...
+	  "main": "require.js",
+	  ...
+	} 
+
+And put this files into folder **/dist/lib/**.
+
+If any installed dependency has no bower.json file (like lodash) you must edit the **copy.js** task to manually copy it:
+
+	grunt.config.set('copy', {
+		...
+		lodash_: {
+			cwd: 'bower_components/lodash/dist',
+			src: 'lodash.js',
+			dest: 'dist/lib/',
+			expand: true
+		},
+		...
+	});
+
+If an unnecesaary file is copied (like boostrap.less):
+
+	//bower_components/bootstrap/bower.json
+	{
+	  ...
+	  "main": [
+    	"less/bootstrap.less",
+    	"dist/js/bootstrap.js"
+	  ],
+	  ...
+	} 
+	
+you can delete it with the **clean-dist.js** task:
+
+	//grunt/clean-dist.js
+	grunt.registerTask('clean-dist', 'Clean dist folder', function() {
+		...
+		grunt.config.set('clean.files.src', ['dist/lib/bootstrap.less']);
+		...
+	});
 
 # Contributing and issues
 
