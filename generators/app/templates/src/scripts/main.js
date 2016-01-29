@@ -3,11 +3,11 @@ require.config({
 	paths: {
 		router: '../js/router',
 		text: '../lib/text',
-		webcomponents: '../lib/webcomponents-lite.min',
-		page: '../lib/page/page',
-		underscore: '../lib/lodash.min',
-		jquery: '../lib/jquery.min',
-		bootstrap: '../lib/bootstrap.min',
+		webcomponents: '../lib/webcomponents',
+		page: '../lib/page',
+		underscore: '../lib/lodash',
+		jquery: '../lib/jquery',
+		bootstrap: '../lib/bootstrap',
 		router: './router'
 	}
 });
