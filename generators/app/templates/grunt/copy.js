@@ -13,66 +13,6 @@ module.exports = function(grunt) {
 			dest: 'dist/',
 			expand: true
 		},
-		requirejs: {
-			cwd: 'bower_components/requirejs',
-			src: 'require.js',
-			dest: 'dist/lib/',
-			expand: true
-		},
-		requirejs_text: {
-			cwd: 'bower_components/text',
-			src: 'text.js',
-			dest: 'dist/lib/',
-			expand: true
-		},
-		polymer: {
-			cwd: 'bower_components/polymer',
-			src: '*.html',
-			dest: 'dist/lib/',
-			expand: true
-		},
-		webcomponentsjs: {
-			cwd: 'bower_components/webcomponentsjs',
-			src: 'webcomponents-lite.min.js',
-			dest: 'dist/lib/',
-			expand: true
-		},
-		lodash: {
-			cwd: 'bower_components/lodash',
-			src: 'lodash.min.js',
-			dest: 'dist/lib/',
-			expand: true
-		},
-		page: {
-			cwd: 'bower_components/page/',
-			src: '*.js',
-			dest: 'dist/lib/page/',
-			expand: true
-		},
-		babel_core: {
-			cwd: 'node_modules/babel-core',
-			src: 'browser.min.js',
-			dest: 'dist/lib/',
-			expand: true
-		},
-		jquery: {
-			cwd: 'bower_components/jquery/dist',
-			src: 'jquery.min.js',
-			dest: 'dist/lib/',
-			expand: true
-		},
-		bootstrap: {
-			cwd: 'bower_components/bootstrap/dist/js',
-			src: 'bootstrap.min.js',
-			dest: 'dist/lib/',
-			expand: true
-		},
-		bootstrap_css: {
-			cwd: 'bower_components/bootstrap/dist/css',
-			src: 'bootstrap.min.css',
-			dest: 'dist/lib/',
-			expand: true
-		},
 		scripts: {
 			cwd: 'src/scripts/',
 			src: ['**/*.js'],
@@ -107,6 +47,30 @@ module.exports = function(grunt) {
 			cwd: 'src/data',
 			src: ['*.*'],
 			dest: 'dist/data/',
+			expand: true
+		},
+		polymer_: {
+			cwd: 'bower_components/polymer',
+			src: '*.html',
+			dest: 'dist/lib/',
+			expand: true
+		},
+		webcomponentsjs_: {
+			cwd: 'bower_components/webcomponentsjs',
+			src: 'webcomponents.js',
+			dest: 'dist/lib/',
+			expand: true
+		},
+		lodash_: {
+			cwd: 'bower_components/lodash/dist',
+			src: 'lodash.js',
+			dest: 'dist/lib/',
+			expand: true
+		},
+		bootstrap_: {
+			cwd: 'bower_components/bootstrap/dist/css',
+			src: 'bootstrap.min.css',
+			dest: 'dist/lib/',
 			expand: true
 		}
 	});
