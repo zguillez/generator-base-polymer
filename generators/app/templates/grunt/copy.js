@@ -7,12 +7,6 @@ module.exports = function(grunt) {
 			dest: 'dist/',
 			expand: true
 		},
-		favicon: {
-			cwd: 'src/',
-			src: 'favicon.ico',
-			dest: 'dist/',
-			expand: true
-		},
 		index: {
 			cwd: 'src/',
 			src: 'index.html',
