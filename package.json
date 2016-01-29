@@ -1,6 +1,6 @@
 {
 	"name": "generator-base-polymer",
-	"version": "1.2.2",
+	"version": "1.2.3",
 	"description": "Polymer basic skeleton for webapp development. With RequireJS, Bootstrap, Sass and templating with Jade. Routing by Page.js.",
 	"license": "MIT",
 	"main": "app/index.js",
