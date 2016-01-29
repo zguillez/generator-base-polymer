@@ -11,12 +11,12 @@
 		"url": "https://github.com/zguillez"
 	},
 	"dependencies": {
-		"requirejs": "~2.1.20",
+		"requirejs": "~2.1.22",
 		"requirejs-text": "~2.0.14",
-		"jquery": "~2.1.0",
-		"bootstrap": "~3.3.5",
-		"lodash": "~3.10.1",
-		"polymer": "~1.2.1",
+		"jquery": "~2.2.0",
+		"bootstrap": "~3.3.6",
+		"lodash": "~4.0.1",
+		"polymer": "~1.2.4",
 		"page": "~1.6.4"
 	}
 }
