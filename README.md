@@ -7,7 +7,6 @@
 [![Installs](https://img.shields.io/npm/dt/generator-base-polymer.svg)](https://coveralls.io/r/zguillez/generator-base-polymer)
 ![](https://reposs.herokuapp.com/?path=zguillez/generator-base-polymer)
 [![License](http://img.shields.io/:license-mit-blue.svg)](http://doge.mit-license.org)
-[![Analytics](https://ga-beacon.appspot.com/UA-1125217-30/zguillez/generator-base-polymer?pixel)](https://github.com/igrigorik/ga-beacon)
 [![Join the chat at https://gitter.im/zguillez/generator-base-polymer](https://badges.gitter.im/zguillez/generator-base-polymer.svg)](https://gitter.im/zguillez/generator-base-polymer?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 > [Zguillez](https://zguillez.io) | Guillermo de la Iglesia
@@ -335,6 +334,4 @@ Features:
 * Page.js
 * Grunt tasks
 
-
-
-
+[![Analytics](https://ga-beacon.appspot.com/UA-1125217-30/zguillez/generator-base-polymer?pixel)](https://github.com/igrigorik/ga-beacon)

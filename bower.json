@@ -1,6 +1,6 @@
 {
 	"name": "generator-base-polymer",
-	"version": "1.0.5",
+	"version": "1.2.7",
 	"description": "Polymer basic skeleton for webapp development. With RequireJS, Bootstrap, Sass and templating with Jade. Routing by Page.js.",
 	"license": "MIT",
 	"main": "app/index.js",
@@ -11,12 +11,12 @@
 		"url": "https://github.com/zguillez"
 	},
 	"dependencies": {
-		"requirejs": "~2.1.22",
+		"requirejs": "~2.2.0",
 		"requirejs-text": "~2.0.14",
-		"jquery": "~2.2.0",
+		"jquery": "~2.2.2",
 		"bootstrap": "~3.3.6",
-		"lodash": "~4.2.1",
-		"polymer": "~1.2.4",
-		"page": "~1.6.4"
+		"lodash": "~4.6.1",
+		"polymer": "~1.4.0",
+		"page": "~1.7.1"
 	}
 }
