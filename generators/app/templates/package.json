@@ -11,9 +11,9 @@
 		"url": "https://github.com/zguillez"
 	},
 	"devDependencies": {
-		"babel-core": "^6.7.4",
-		"bower": "^1.7.7",
-		"grunt": "^0.4.5",
+		"babel-core": "^6.7.5",
+		"bower": "^1.7.9",
+		"grunt": "^1.0.1",
 		"grunt-babel": "^6.0.0",
 		"grunt-contrib-clean": "~1.0.0",
 		"grunt-contrib-concat": "^1.0.0",
@@ -31,6 +31,6 @@
 		"grunt-open": "^0.2.3",
 		"grunt-reload": "^0.2.0",
 		"jade": "^1.11.0",
-		"load-grunt-tasks": "^3.4.1"
+		"load-grunt-tasks": "^3.5.0"
 	}
 }
