@@ -18,10 +18,10 @@ module.exports = function(grunt) {
 	require('./grunt/clean-dist')(grunt);
 	grunt.registerTask('default', ['serve']);
 	grunt.registerTask('serve', function() {
-		grunt.task.run(['clean', 'eslint', 'sass', 'jade', 'copy', 'clean-dist', 'replace', 'babel', 'connect', 'open', 'watch']);
+		grunt.task.run(['clean', 'sass', 'jade', 'copy', 'clean-dist', 'replace', 'babel', 'connect', 'open', 'watch']);
 	});
 	grunt.registerTask('build', function() {
-		grunt.task.run(['clean', 'eslint', 'sass', 'jade', 'copy', 'clean-dist', 'replace', 'babel']);
+		grunt.task.run(['clean', 'sass', 'jade', 'copy', 'clean-dist', 'replace', 'babel']);
 	});
 	grunt.registerTask('rebuild', function() {
 		grunt.task.run(['clean', 'sass', 'jade', 'copy', 'clean-dist', 'replace', 'babel']);
